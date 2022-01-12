@@ -43,16 +43,17 @@ public class SortingAlgorithms {
             //b at this point = 0; used for comparison
             int b = i - 1;
 			//if
-            while ((arr[b] > a)&& (b > -1)){
+            while ((arr[b] > a) && (b > 0)){
 				//swap
                 arr[b + 1] = arr[b];
                 //move index for comparison
                 b = b - 1;
                 //increase counter
-                count++;     
+             
             }
             //minimum unsorted
             arr[b + 1] = a;
+            count++;    
         }
         //print counter
 		System.out.println(count); 
@@ -60,29 +61,35 @@ public class SortingAlgorithms {
 	
 	//overloaded so can pass array from tester class
 	static void selectionSort(int arr[]) {
+		int count = 0; 
+		//min
+		int a = 0; 
 		for (int i = 1; i < arr.length - 1; i ++) {
-			//min
-			int a = 1; 
+	
 			//minimum unsorted element
 			//int b = a + 1; 
 			//counter
-			int count = 0; 
 			//moving minimum unsorted element compare element
-			for (int b = 2; b < arr.length - 1; b++) {
+			for (int b = i; b < arr.length - 1; b++) {
 				//finding minimum unsorted element
 				if ( arr[b] > arr[a] ) {
-					a = b; 
-				}
-				//swapping
-				if (a != i) {
-					int c = arr[i]; 
-					arr[i] = arr[i + 1]; 
-					arr[i + 1] = c;
-					count++;
+					a = b;
+					 
 				}
 			}
+			
+			//swapping
+				if (a != i) {
+					int c = arr[a]; 
+					arr[a] = arr[a + 1]; 
+					arr[a + 1] = c;
+					count++;
+					
+				}
+	
+		} 
 		//print counter
-		System.out.println(count); 
-		}
+		System.out.println(count);
 	}
   
+}
