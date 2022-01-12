@@ -1,4 +1,4 @@
-public class SorthingAlgorithms {
+public class SortingAlgorithms {
   /*
   //fork and make your own version
    public int[] arr = int[10];
@@ -64,11 +64,11 @@ public class SorthingAlgorithms {
 			//min
 			int a = 1; 
 			//minimum unsorted element
-			int b = a + 1; 
+			//int b = a + 1; 
 			//counter
 			int count = 0; 
 			//moving minimum unsorted element compare element
-			from (b; b < arr.length - 1; b++) {
+			for (int b = 2; b < arr.length - 1; b++) {
 				//finding minimum unsorted element
 				if ( arr[b] > arr[a] ) {
 					a = b; 
@@ -78,7 +78,7 @@ public class SorthingAlgorithms {
 					int c = arr[i]; 
 					arr[i] = arr[i + 1]; 
 					arr[i + 1] = c;
-					count++
+					count++;
 				}
 			}
 		//print counter
@@ -86,4 +86,3 @@ public class SorthingAlgorithms {
 		}
 	}
   
-}
